@@ -1,6 +1,7 @@
 parent:
   helen: 32
   oleg: 40
+  petr: 18
 selezen:
   open: true
   color: blue
