@@ -1,6 +1,10 @@
 server.port: 8090
-spring.main.allow-bean-definition-overriding: true
-spring.jackson.default-property-inclusion: non_null
+spring:
+  main.allow-bean-definition-overriding: true
+  jackson.default-property-inclusion: non_null
+  cloud.config:
+    overrideSystemProperties: false
+    overrideNone: true
 management.endpoints.web.exposure.include: health,metrics,prometheus,loggers
 resttemplate:
   read-timeout: 3000
