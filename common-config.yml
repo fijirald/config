@@ -1,0 +1,61 @@
+spring.main.allow-bean-definition-overriding: true
+spring.jackson.default-property-inclusion: non_null
+management.endpoints.web.exposure.include: health,metrics,prometheus,loggers
+systemtoken:
+  token: TEST1SYSTEM1TOKEN1TEST1SYSTEM1TO
+  secret: TEST_SECRET_TEST_SECRET_TEST_SEC
+  allowed_ip: .*
+  allowed_method: ^\/dp\/dp-url$|^\/dp\/esia-consent-state$
+  date-valid-to: null
+logging:
+  pattern.level: "[%X{traceparent}] %5p"
+  level:
+    ru.beeline.pbelegal.dp: INFO
+dp:
+  validate.ctn.reg: ^[9|6]\d{9}$|^08[1|5|6|9]\d*$
+  errors:
+    "00001":
+      httpCode: 400
+      message: Отсутствует обязательный параметр redirectUrl
+    "00002":
+      httpCode: 401
+      message: Ошибка валидации токена
+    "00007":
+      httpCode: 503
+      message: Не удалось получить ответ RICH
+    "00008":
+      httpCode: 503
+      message: Не удалось получить ответ UCP2.0
+    "00013":
+      httpCode: 503
+      message: Не удалось получить ответ от IDP
+    "00018":
+      httpCode: 503
+      message: Не удалось получить токен Mapic
+    "00009":
+      httpCode: 500
+      message: Тип документа не соответствует допустимому значению
+    "00010":
+      httpCode: 500
+      message: Account Type не соответствует допустимому значению
+    "00015":
+      httpCode: 500
+      message: Абонент уже имеет запущенный процесс обновления
+    "00016":
+      httpCode: 500
+      message: Найден более чем один индивидуал с активными соглашениями
+    "00017":
+      httpCode: 500
+      message: Найдено более чем одно активное соглашение на одном индивидуале
+    "00020":
+      httpCode: 500
+      message: Не удалось получить необходимые данные от RICH
+    "00021":
+      httpCode: 500
+      message: Не удалось получить необходимые данные от UCP2.0
+    "00022":
+      httpCode: 500
+      message: Не удалось получить необходимые данные от IDP
+    "99999":
+      httpCode: 500
+      message: Системная ошибка
