@@ -2,6 +2,9 @@ server.port: 8090
 spring.main.allow-bean-definition-overriding: true
 spring.jackson.default-property-inclusion: non_null
 management.endpoints.web.exposure.include: health,metrics,prometheus,loggers
+resttemplate:
+  read-timeout: 3000
+  connect-timeout: 3000
 systemtoken:
   token: TEST1SYSTEM1TOKEN1TEST1SYSTEM1TO
   secret: TEST_SECRET_TEST_SECRET_TEST_SEC
