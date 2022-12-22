@@ -3,9 +3,10 @@ spring:
   main.allow-bean-definition-overriding: true
   jackson.default-property-inclusion: non_null
   cloud.config:
-    allowOverride: true
+    allow-override: true
+    override-none: true
     overrideNone: true
-    overrideSystemProperties: false
+    override-system-properties: false
 management.endpoints.web.exposure.include: health,metrics,prometheus,loggers
 resttemplate:
   read-timeout: 3000
